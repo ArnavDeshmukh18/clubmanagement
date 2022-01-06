@@ -68,9 +68,9 @@ class _HomePageState extends State<HomePage> {
                   height: height/30,
                 )
             ,
-                TaskManager(height: height, width: width, NavigateTo: '', Task: 'Add Member',),
-                TaskManager(height: height, width: width, NavigateTo: '', Task: 'Delete Member',),
-                TaskManager(height: height, width: width, Task: 'Display Members', NavigateTo: '',),
+                TaskManager(height: height, width: width, navigateTo: '', task: 'Add Member', path: 'AddMemberScreen',),
+                TaskManager(height: height, width: width, navigateTo: '', task: 'Delete Member', path: '',),
+                TaskManager(height: height, width: width, task: 'Display Members', navigateTo: '', path: '',),
 
               ],
             ),
@@ -85,9 +85,9 @@ class TaskManager extends StatelessWidget {
    TaskManager({
     Key? key,
     required this.height,
-    required this.width, required this.Task, required this.NavigateTo,
+    required this.width, required this.task, required this.navigateTo, required this.path,
   }) : super(key: key);
-  final String Task,NavigateTo;
+  final String task,navigateTo,path;
 
   final double height;
   final double width;
@@ -110,14 +110,14 @@ class TaskManager extends StatelessWidget {
                       SizedBox(
                         width: width/20,
                       ),
-                      Text(Task,style:GoogleFonts.roboto(
+                      Text(task,style:GoogleFonts.roboto(
                         color: Colors.black38,
                         fontWeight: FontWeight.bold,
                         fontSize: width/18,
                       ),)
                       ,IconButton(
                           onPressed: () {
-
+                 Navigator.pushNamed(context,path);
                           },
                           icon: Icon(Icons.arrow_forward_ios,
                           color: secondaryColor,)),

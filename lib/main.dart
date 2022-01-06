@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:clubmanagement/Screens/homescreen.dart';
+import 'package:clubmanagement/Screens/addMember.dart';
 void main()
 {
   runApp(const MyApp());
@@ -14,8 +15,15 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       home: HomePage(),
+
+      routes: {
+
+    'HomeScreen':(context)=>HomePage(),
+    'AddMemberScreen':(context)=>AddMember(),
+
+      },
     );
   }
 }
