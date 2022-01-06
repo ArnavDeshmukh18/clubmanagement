@@ -14,10 +14,11 @@ class AddMember extends StatefulWidget {
 }
 
 class _AddMemberState extends State<AddMember> {
+
+  GlobalKey<FormState> formKey=GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
 
-    final formKey=GlobalKey<FormState>();
     Size size =MediaQuery.of(context).size;
     var width=size.width;
     var height=size.height;
